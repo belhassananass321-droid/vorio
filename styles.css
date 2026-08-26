@@ -19,6 +19,9 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   color: var(--navy);
   background: var(--cream);
   font-family: Montserrat, Helvetica, Arial, sans-serif;
@@ -30,6 +33,10 @@ body {
 
 body.is-ready {
   visibility: visible;
+}
+
+#page {
+  flex: 1 0 auto;
 }
 
 img,
@@ -218,7 +225,7 @@ p:last-child {
 }
 
 .hero-lockup {
-  margin: 1.35rem 0 0;
+  margin: 1.5rem 0 0;
   font-size: 1.05rem;
 }
 
@@ -313,7 +320,7 @@ p:last-child {
 }
 
 .who-aside {
-  margin: 1.15rem 0 0;
+  margin: 1.25rem 0 0;
 }
 
 /* Page intros */
@@ -329,6 +336,9 @@ p:last-child {
 .rule {
   border: 0;
   border-top: var(--rule);
+  color: var(--navy);
+  background: none;
+  height: 0;
   margin: 0.2rem 0 0;
 }
 

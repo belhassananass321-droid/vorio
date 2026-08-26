@@ -166,3 +166,4 @@ const CONTENT = {
     thanks: "We have it. We will come back with a conversation.",
   },
 };
+window.CONTENT = CONTENT;
