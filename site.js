@@ -3,15 +3,16 @@
   const C = window.CONTENT;
 
   function markSvg(color) {
+    // Open V: two thick bars, flat horizontal ends, star under the valley with a gap.
     return (
-      '<svg class="lockup-mark" viewBox="0 0 100 112" aria-hidden="true" focusable="false">' +
-      '<g fill="none" stroke="' +
+      '<svg class="lockup-mark" viewBox="0 0 220 230" aria-hidden="true" focusable="false">' +
+      '<path fill="' +
       color +
-      '" stroke-width="10.5" stroke-linecap="butt">' +
-      '<line x1="16" y1="8" x2="46.5" y2="87"/>' +
-      '<line x1="84" y1="8" x2="53.5" y2="87"/>' +
-      "</g>" +
-      '<path fill="#1E6BFF" d="M50,78.5 L52.55,89.45 L63.5,92 L52.55,94.55 L50,105.5 L47.45,94.55 L36.5,92 L47.45,89.45 Z"/>' +
+      '" d="M18 18h48l30 134H48L18 18z"/>' +
+      '<path fill="' +
+      color +
+      '" d="M154 18h48l-30 134h-48L154 18z"/>' +
+      '<path fill="#1E6BFF" d="M110.00,168.00L114.81,187.19L134.00,192.00L114.81,196.81L110.00,216.00L105.19,196.81L86.00,192.00L105.19,187.19Z"/>' +
       "</svg>"
     );
   }
@@ -105,6 +106,39 @@
 
   function renderHome() {
     const h = C.home;
+    const panels =
+      '<div class="market-grid">' +
+      '<article class="market-panel">' +
+      "<h3>" +
+      h.twoWays.commercial.title +
+      "</h3><p>" +
+      h.twoWays.commercial.body +
+      '</p><a class="text-link" href="' +
+      h.twoWays.commercial.href +
+      '">' +
+      h.twoWays.commercial.link +
+      "</a></article>" +
+      '<article class="market-panel">' +
+      "<h3>" +
+      h.twoWays.govcon.title +
+      "</h3><p>" +
+      h.twoWays.govcon.body +
+      '</p><a class="text-link" href="' +
+      h.twoWays.govcon.href +
+      '">' +
+      h.twoWays.govcon.link +
+      "</a></article></div>";
+    const process = C.howWeWork.steps
+      .map(function (step) {
+        return (
+          '<div class="process-item"><div class="process-num">' +
+          step.num +
+          '</div><div class="process-title">' +
+          step.title +
+          "</div></div>"
+        );
+      })
+      .join("");
     document.getElementById("page").innerHTML =
       '<section class="hero"><div class="wrap"><div class="hero-grid"><div>' +
       "<h1>" +
@@ -128,28 +162,14 @@
       "</div></div></section>" +
       '<section class="band band-rule"><div class="wrap"><h2>' +
       h.twoWays.h2 +
-      '</h2><div class="split"><div><h3>' +
-      h.twoWays.commercial.title +
-      "</h3><p>" +
-      h.twoWays.commercial.body +
-      '</p><a class="text-link" href="' +
-      h.twoWays.commercial.href +
-      '">' +
-      h.twoWays.commercial.link +
-      "</a></div><div><h3>" +
-      h.twoWays.govcon.title +
-      "</h3><p>" +
-      h.twoWays.govcon.body +
-      '</p><a class="text-link" href="' +
-      h.twoWays.govcon.href +
-      '">' +
-      h.twoWays.govcon.link +
-      "</a></div></div></div></section>" +
+      "</h2>" +
+      panels +
+      "</div></section>" +
       '<section class="band band-navy"><div class="wrap"><h2>' +
       h.motion.h2 +
-      '</h2><p class="motion-list">' +
-      h.motion.list +
-      "</p><p>" +
+      '</h2><div class="process-strip">' +
+      process +
+      "</div><p>" +
       h.motion.body +
       '</p><div class="actions"><a class="btn btn-on-navy" href="' +
       h.motion.href +
@@ -185,8 +205,8 @@
       '</p><hr class="rule" /><div class="jump">' +
       jump +
       "</div></div></section>" +
-      '<section class="page-split"><div class="wrap"><div class="split">' +
-      '<div id="' +
+      '<section class="page-split"><div class="wrap"><div class="market-grid">' +
+      '<article class="market-panel" id="' +
       w.commercial.id +
       '"><h2>' +
       w.commercial.title +
@@ -198,8 +218,8 @@
       w.button.href +
       '">' +
       w.button.label +
-      "</a></div></div>" +
-      '<div id="' +
+      "</a></div></article>" +
+      '<article class="market-panel" id="' +
       w.govcon.id +
       '"><h2>' +
       w.govcon.title +
@@ -207,7 +227,7 @@
       w.govcon.body +
       "</p>" +
       itemsHtml(w.govcon.items) +
-      "</div></div></div></section>";
+      "</article></div></div></section>";
   }
 
   function renderHowWeWork() {
