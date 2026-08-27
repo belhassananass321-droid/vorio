@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" fill="none" aria-hidden="true">
+  <g transform="translate(1040 390)" stroke="#F4F2EC" stroke-opacity="0.11" stroke-width="1.15">
+    <circle r="62"/>
+    <circle r="124"/>
+    <circle r="186"/>
+    <circle r="248"/>
+    <circle r="310"/>
+    <circle r="372"/>
+    <circle r="434"/>
+    <circle r="496"/>
+    <circle r="558"/>
+    <path d="M-620 0H620"/>
+    <path d="M0 -620V620"/>
+    <path d="M-438 -438L438 438"/>
+    <path d="M438 -438L-438 438"/>
+    <path d="M-219 -536L219 536"/>
+    <path d="M219 -536L-219 536"/>
+    <path d="M-536 -219L536 219"/>
+    <path d="M536 -219L-536 219"/>
+  </g>
+  <circle cx="1040" cy="390" r="4.5" fill="#1E6BFF" fill-opacity="0.85"/>
+</svg>

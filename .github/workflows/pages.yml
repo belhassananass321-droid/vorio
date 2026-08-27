@@ -27,9 +27,10 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Stage site
         run: |
-          mkdir -p _site
-          cp index.html what-we-do.html how-we-work.html about.html contact.html \
-            styles.css content.js site.js .nojekyll README.md _site/
+          mkdir -p _site/assets
+          cp index.html services.html govcon.html commercial.html about.html contact.html privacy.html \
+            .nojekyll README.md _site/
+          cp assets/* _site/assets/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
