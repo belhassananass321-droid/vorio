@@ -1,4 +1,4 @@
 const toggle=document.querySelector('.mobile-toggle');const links=document.querySelector('.navlinks');if(toggle&&links){toggle.addEventListener('click',()=>links.classList.toggle('open'));}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
-const form=document.querySelector('#contact-form');if(form){form.addEventListener('submit',e=>{const action=form.dataset.mail||'hello@vorioadvisory.com';if(location.protocol==='file:'){e.preventDefault();const d=new FormData(form);const subject=encodeURIComponent('Vorio inquiry — '+(d.get('company')||d.get('name')||'New lead'));const body=encodeURIComponent([...d.entries()].map(([k,v])=>`${k}: ${v}`).join('\n'));location.href=`mailto:${action}?subject=${subject}&body=${body}`;}})}
+const form=document.querySelector('#contact-form');if(form){form.addEventListener('submit',e=>{e.preventDefault();const note=form.querySelector('.form-status');if(note){note.hidden=false;}form.reset();})}
