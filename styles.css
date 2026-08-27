@@ -2,8 +2,8 @@
   --navy: #0b1d36;
   --cream: #f4f2ec;
   --star: #1e6bff;
-  --pad-x: clamp(1.5rem, 7vw, 5.5rem);
-  --max: 70rem;
+  --pad-x: clamp(1.75rem, 8vw, 6.5rem);
+  --max: 74rem;
   --rule: 1px solid var(--navy);
 }
 
@@ -58,13 +58,13 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.55rem, 5.6vw, 4.35rem);
-  margin: 0 0 1rem;
+  font-size: clamp(3.15rem, 8.2vw, 6.35rem);
+  margin: 0 0 1.15rem;
 }
 
 h2 {
-  font-size: clamp(1.7rem, 3.1vw, 2.55rem);
-  margin: 0 0 0.9rem;
+  font-size: clamp(1.9rem, 3.6vw, 2.85rem);
+  margin: 0 0 1.1rem;
 }
 
 p {
@@ -92,7 +92,7 @@ p:last-child {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 1.65rem 0 1.35rem;
+  padding: 2rem 0 1.7rem;
 }
 
 .nav {
@@ -113,32 +113,23 @@ p:last-child {
   text-underline-offset: 0.28em;
 }
 
-/* Lockup: unframed V, star as the tip, ORIO on the V midline */
+/* Signed emblem: oversized V, small ORIO in the valley, star seated in the notch. */
 
 .lockup {
   display: inline-flex;
   align-items: center;
-  gap: 0.08em;
   text-decoration: none;
   color: var(--navy);
 }
 
-.lockup-mark {
-  height: 1.72em;
+.lockup-svg {
+  height: 3.6em;
   width: auto;
-  flex: none;
+  display: block;
+  overflow: visible;
 }
 
-.lockup-type {
-  font-weight: 800;
-  font-size: 1.38em;
-  letter-spacing: 0.01em;
-  line-height: 1;
-  transform: translateY(-0.06em);
-}
-
-.site-footer .lockup,
-.site-footer .lockup-type {
+.site-footer .lockup {
   color: var(--cream);
 }
 
@@ -146,13 +137,14 @@ p:last-child {
 
 .btn {
   display: inline-block;
-  padding: 0.78rem 1.35rem;
+  padding: 0.88rem 1.5rem;
   font-family: inherit;
   font-size: 0.98rem;
   font-weight: 400;
   line-height: 1;
   text-decoration: none;
   border: 1.5px solid var(--navy);
+  border-radius: 0;
   background: var(--navy);
   color: var(--cream);
   cursor: pointer;
@@ -205,19 +197,19 @@ p:last-child {
 /* Home hero */
 
 .hero {
-  padding: 3.2rem 0 4.5rem;
+  padding: 5.25rem 0 6.5rem;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
   align-items: center;
-  gap: 2rem 3rem;
+  gap: 2.5rem 4rem;
 }
 
 .dek {
-  font-size: 1.22rem;
-  margin-bottom: 1.15rem;
+  font-size: 1.28rem;
+  margin-bottom: 1.35rem;
 }
 
 .hero-body {
@@ -231,7 +223,7 @@ p:last-child {
 
 .hero-mark {
   justify-self: end;
-  width: min(100%, 22rem);
+  width: min(100%, 20rem);
 }
 
 .hero-mark svg {
@@ -242,32 +234,40 @@ p:last-child {
 /* Two ways in */
 
 .band {
-  padding: 4.25rem 0;
+  padding: 5.75rem 0;
 }
 
 .band-rule {
   border-top: var(--rule);
 }
 
-.split {
+.split,
+.market-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
-  margin-top: 2.4rem;
+  margin-top: 2.75rem;
 }
 
-.split > :first-child {
-  padding-right: 3.1rem;
+.split > :first-child,
+.market-panel:first-child {
+  padding-right: 3.5rem;
   border-right: var(--rule);
 }
 
-.split > :last-child {
-  padding-left: 3.1rem;
+.split > :last-child,
+.market-panel:last-child {
+  padding-left: 3.5rem;
 }
 
-.split h3 {
-  font-size: 1.35rem;
-  margin: 0 0 0.85rem;
+.split h3,
+.market-panel h3 {
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  margin: 0 0 1rem;
+}
+
+.market-panel h2 {
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
 }
 
 .text-link {
@@ -312,11 +312,28 @@ p:last-child {
   max-width: 20ch;
 }
 
-.motion-list {
+.process-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem 2rem;
+  margin: 2.25rem 0 2rem;
+  padding: 0.35rem 0 1.75rem;
+  border-top: 1px solid var(--cream);
+  border-bottom: 1px solid var(--cream);
+}
+
+.process-num {
   font-weight: 800;
-  font-size: clamp(1.12rem, 2.1vw, 1.4rem);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  margin: 1.35rem 0 0.45rem;
+}
+
+.process-title {
+  font-weight: 800;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
   letter-spacing: -0.02em;
-  margin: 1.2rem 0 1.15rem;
+  margin: 0 0 1.35rem;
 }
 
 .who-aside {
@@ -326,7 +343,7 @@ p:last-child {
 /* Page intros */
 
 .page-intro {
-  padding: 3.1rem 0 0;
+  padding: 4.25rem 0 0;
 }
 
 .page-intro .dek {
@@ -364,7 +381,7 @@ p:last-child {
 }
 
 .page-split {
-  padding: 3.25rem 0 4.5rem;
+  padding: 3.75rem 0 5.5rem;
 }
 
 .about-intro {
@@ -375,28 +392,28 @@ p:last-child {
 
 .about-block {
   max-width: 36rem;
-  padding: 3.4rem 0 0;
+  padding: 4rem 0 0;
 }
 
 .about-block:last-child {
-  padding-bottom: 4.5rem;
+  padding-bottom: 5.5rem;
 }
 
 .depth {
-  padding: 0.5rem 0 4.5rem;
+  padding: 0.75rem 0 5.5rem;
 }
 
 /* Numbered steps */
 
 .steps {
-  margin: 2.6rem 0 3.5rem;
+  margin: 3.25rem 0 4rem;
 }
 
 .step {
   display: grid;
-  grid-template-columns: 3.4rem minmax(0, 1fr);
-  column-gap: 0.85rem;
-  padding: 1.35rem 0 1.5rem;
+  grid-template-columns: 4.2rem minmax(0, 1fr);
+  column-gap: 1.1rem;
+  padding: 1.7rem 0 1.85rem;
   border-top: var(--rule);
 }
 
@@ -408,7 +425,7 @@ p:last-child {
 .step-title {
   font-weight: 800;
   letter-spacing: -0.02em;
-  font-size: 1.12rem;
+  font-size: 1.28rem;
 }
 
 .step-body {
@@ -527,7 +544,7 @@ p:last-child {
 .close-band {
   background: var(--navy);
   color: var(--cream);
-  padding: 4.5rem 0;
+  padding: 5.75rem 0;
 }
 
 .close-band .wrap {
@@ -556,7 +573,7 @@ p:last-child {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 1.7rem 0 2rem;
+  padding: 2rem 0 2.35rem;
 }
 
 .footer-nav {
@@ -579,26 +596,42 @@ p:last-child {
 
 @media (max-width: 860px) {
   .hero-grid,
-  .split {
+  .split,
+  .market-grid,
+  .process-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 3.5rem 0 4.25rem;
   }
 
   .hero-mark {
     justify-self: start;
-    width: min(100%, 14rem);
+    width: min(100%, 12.5rem);
     margin-top: 0.5rem;
   }
 
-  .split > :first-child {
+  .split > :first-child,
+  .market-panel:first-child {
     padding-right: 0;
-    padding-bottom: 2.25rem;
+    padding-bottom: 2.5rem;
     border-right: none;
     border-bottom: var(--rule);
   }
 
-  .split > :last-child {
+  .split > :last-child,
+  .market-panel:last-child {
     padding-left: 0;
-    padding-top: 2.25rem;
+    padding-top: 2.5rem;
+  }
+
+  .market-grid {
+    grid-template-columns: 1fr;
   }
 
   .choices {
@@ -619,8 +652,12 @@ p:last-child {
     gap: 1rem 1.25rem;
   }
 
+  .process-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .step,
   .contact-steps .step {
-    grid-template-columns: 2.6rem minmax(0, 1fr);
+    grid-template-columns: 3rem minmax(0, 1fr);
   }
 }
