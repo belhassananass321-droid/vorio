@@ -306,7 +306,7 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
 .form-actions{margin-top:.4rem}
 .direct{margin-top:2.8rem;max-width:40rem}
 .direct .kicker{margin-bottom:.45rem}
-.direct address{font-style:normal;color:var(--ink);line-height:1.5}
+.direct address{font-style:normal;color:var(--ink);line-height:1.45}
 
 /* Footer */
 .footer{padding:1.2rem 0 1.6rem}
@@ -342,7 +342,7 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
 .footer-col{display:flex;flex-direction:column;gap:.72rem}
 .footer-col a{color:var(--ink);opacity:.9}
 .footer-col a:hover{color:var(--blue);opacity:1}
-.footer-address{margin:0;color:var(--ink);opacity:.9;line-height:1.45;max-width:16.5rem}
+.footer-address{margin:0;color:var(--ink);opacity:.9;line-height:1.45}
 .footer-bar{
   display:flex;
   justify-content:space-between;
