@@ -113,7 +113,7 @@ p:last-child {
   text-underline-offset: 0.28em;
 }
 
-/* Art lockup: open V + ORIO beside it. Star under the valley, not fused. */
+/* Signed emblem: oversized open V, ORIO inside the valley, star under the base. */
 
 .lockup {
   display: inline-flex;
@@ -123,16 +123,9 @@ p:last-child {
 }
 
 .lockup-svg {
-  height: 2.85em;
+  height: 3.6em;
   width: auto;
   display: block;
-  overflow: visible;
-}
-
-.lockup-mark {
-  height: 2.55em;
-  width: auto;
-  flex: none;
   overflow: visible;
 }
 
@@ -235,10 +228,6 @@ p:last-child {
 
 .hero-mark svg {
   width: 100%;
-  height: auto;
-}
-
-.hero-mark .lockup-mark {
   height: auto;
 }
 
