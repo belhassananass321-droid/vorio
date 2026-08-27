@@ -1,7 +1,5 @@
-# Vorio v0
+# Vorio
 
-Static v0 website. All copy lives in `content.js`. Pages read from that file.
+Static site for GitHub Pages. Serves from the root of `main`.
 
-**GitHub Pages:** https://belhassananass321-droid.github.io/vorio/
-
-Deploys from `main` on every push via `.github/workflows/pages.yml`.
+**Live:** https://belhassananass321-droid.github.io/vorio/

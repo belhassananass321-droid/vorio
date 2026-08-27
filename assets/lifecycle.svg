@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 220" width="1180" height="220" role="img" aria-labelledby="lifecycleTitle">
+  <title id="lifecycleTitle">Find, Qualify, Pursue, Win, Scale</title>
+  <defs>
+    <style>
+      .rail { fill: none; stroke: rgba(244,242,236,.18); stroke-width: 1.5; }
+      .node { fill: #050914; stroke: #1E6BFF; stroke-width: 1.6; }
+      .dot { fill: #1E6BFF; }
+      .label { fill: #F4F2EC; font-family: Inter, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 2.4px; }
+      .num { fill: #8fb3ff; font-family: Inter, Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 1.6px; }
+    </style>
+  </defs>
+  <line class="rail" x1="90" y1="86" x2="1090" y2="86"/>
+  <g transform="translate(90,86)">
+    <circle class="node" r="18"/>
+    <circle class="dot" r="5"/>
+    <text class="num" text-anchor="middle" y="-32">01</text>
+    <text class="label" text-anchor="middle" y="52">FIND</text>
+  </g>
+  <g transform="translate(340,86)">
+    <circle class="node" r="18"/>
+    <circle class="dot" r="5"/>
+    <text class="num" text-anchor="middle" y="-32">02</text>
+    <text class="label" text-anchor="middle" y="52">QUALIFY</text>
+  </g>
+  <g transform="translate(590,86)">
+    <circle class="node" r="18"/>
+    <circle class="dot" r="5"/>
+    <text class="num" text-anchor="middle" y="-32">03</text>
+    <text class="label" text-anchor="middle" y="52">PURSUE</text>
+  </g>
+  <g transform="translate(840,86)">
+    <circle class="node" r="18"/>
+    <circle class="dot" r="5"/>
+    <text class="num" text-anchor="middle" y="-32">04</text>
+    <text class="label" text-anchor="middle" y="52">WIN</text>
+  </g>
+  <g transform="translate(1090,86)">
+    <circle class="node" r="18"/>
+    <circle class="dot" r="5"/>
+    <text class="num" text-anchor="middle" y="-32">05</text>
+    <text class="label" text-anchor="middle" y="52">SCALE</text>
+  </g>
+</svg>
