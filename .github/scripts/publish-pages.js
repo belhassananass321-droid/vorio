@@ -1,14 +1,42 @@
 // Publish the github-pages artifact without the 10-minute cancel that
-// actions/deploy-pages applies. GitHub Pages can sit in updating_pages
-// longer than that; cancelling leaves the previous site live forever.
+// actions/deploy-pages applies. Also clear a stuck prior Pages deployment
+// lock before creating a new one (GitHub returns 400 until that lock drops).
 module.exports = async function publishPages({ github, context, core }) {
   const owner = context.repo.owner;
   const repo = context.repo.repo;
   const sha = context.sha;
   const runId = context.runId;
   const pollMs = 10 * 1000;
+  const retryMs = 45 * 1000;
   const maxWaitMs = 25 * 60 * 1000;
   const pageUrl = `https://${owner}.github.io/${repo}/`;
+  const stuckSha = "c59da0a4d25d1fe7e3f94c9144ab8f3b38d27396";
+
+  async function cancelDeployment(deploymentId) {
+    try {
+      await github.request("POST /repos/{owner}/{repo}/pages/deployments/{deploymentId}/cancel", {
+        owner,
+        repo,
+        deploymentId
+      });
+      core.info(`Canceled Pages deployment ${deploymentId}`);
+    } catch (error) {
+      core.warning(`Cancel ${deploymentId} failed (${error.status}): ${error.message}`);
+    }
+  }
+
+  async function deploymentStatus(deploymentId) {
+    try {
+      const current = await github.request(
+        "GET /repos/{owner}/{repo}/pages/deployments/{deploymentId}",
+        { owner, repo, deploymentId }
+      );
+      return current.data.status || "";
+    } catch (error) {
+      core.warning(`Status ${deploymentId} failed (${error.status}): ${error.message}`);
+      return "";
+    }
+  }
 
   const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
     owner,
@@ -27,10 +55,17 @@ module.exports = async function publishPages({ github, context, core }) {
 
   core.info(`Using artifact ${artifact.id} (${artifact.size_in_bytes} bytes) for ${sha}`);
 
-  const idToken = await core.getIDToken();
+  const stuckStatus = await deploymentStatus(stuckSha);
+  core.info(`Prior deployment ${stuckSha} status: ${stuckStatus || "(empty)"}`);
+  if (stuckStatus && stuckStatus !== "succeed") {
+    await cancelDeployment(stuckSha);
+  }
 
+  const idToken = await core.getIDToken();
+  const started = Date.now();
   let created;
-  for (let attempt = 1; attempt <= 6; attempt += 1) {
+
+  while (Date.now() - started < maxWaitMs) {
     try {
       created = await github.request("POST /repos/{owner}/{repo}/pages/deployments", {
         owner,
@@ -44,12 +79,23 @@ module.exports = async function publishPages({ github, context, core }) {
       const message = error.message || "";
       const retryable =
         error.status === 400 && /in progress deployment|Please cancel/i.test(message);
-      core.warning(`Create deployment attempt ${attempt} failed (${error.status}): ${message}`);
-      if (!retryable || attempt === 6) {
+      core.warning(`Create deployment failed (${error.status}): ${message}`);
+      if (!retryable) {
         throw error;
       }
-      await new Promise((resolve) => setTimeout(resolve, 20 * 1000));
+      const match = message.match(/cancel ([0-9a-f]{40}) first/i);
+      if (match) {
+        await cancelDeployment(match[1]);
+      } else {
+        await cancelDeployment(stuckSha);
+      }
+      core.info("Waiting for the stuck Pages lock to clear...");
+      await new Promise((resolve) => setTimeout(resolve, retryMs));
     }
+  }
+
+  if (!created) {
+    throw new Error("Timed out waiting for the previous Pages deployment lock to clear.");
   }
 
   const deploymentId = created.data.id || sha;
@@ -57,21 +103,10 @@ module.exports = async function publishPages({ github, context, core }) {
   core.info(JSON.stringify(created.data));
   core.setOutput("page_url", created.data.page_url || pageUrl);
 
-  const started = Date.now();
   while (Date.now() - started < maxWaitMs) {
     await new Promise((resolve) => setTimeout(resolve, pollMs));
-    let status = "unknown_status";
-    try {
-      const current = await github.request(
-        "GET /repos/{owner}/{repo}/pages/deployments/{deploymentId}",
-        { owner, repo, deploymentId }
-      );
-      status = current.data.status || "unknown_status";
-    } catch (error) {
-      core.warning(`Status poll failed (${error.status}): ${error.message}`);
-    }
-
-    core.info(`Current status: ${status}`);
+    const status = await deploymentStatus(deploymentId);
+    core.info(`Current status: ${status || "(empty)"}`);
 
     if (status === "succeed") {
       core.info("Reported success!");
