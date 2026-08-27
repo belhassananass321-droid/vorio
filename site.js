@@ -2,17 +2,32 @@
   const page = document.body.getAttribute("data-page");
   const C = window.CONTENT;
 
-  function markSvg(color) {
-    // Open V: two thick bars, flat horizontal ends, star under the valley with a gap.
+  function lockupSvg(color, withOrio) {
+    const v =
+      '<path fill="' +
+      color +
+      '" d="M 80.000,37.025 L 150.950,37.025 L 227.085,252.025 L 156.135,252.025 Z"/>' +
+      '<path fill="' +
+      color +
+      '" d="M 350.521,37.025 L 421.471,37.025 L 345.335,252.025 L 274.385,252.025 Z"/>';
+    const star =
+      '<path fill="#1E6BFF" d="M 250.735,236.975 L 260.769,269.941 L 293.735,279.975 L 260.769,290.009 L 250.735,322.975 L 240.702,290.009 L 207.735,279.975 L 240.702,269.941 Z"/>';
+    const orio = withOrio
+      ? '<text fill="' +
+        color +
+        '" font-family="Montserrat, Helvetica, Arial, sans-serif" font-weight="800" font-size="160" transform="translate(431.471,150.325)" dominant-baseline="central" text-anchor="start">ORIO</text>'
+      : "";
+    const vb = withOrio ? "70 30 890 305" : "80 37 342 286";
+    const cls = withOrio ? "lockup-svg" : "lockup-mark";
     return (
-      '<svg class="lockup-mark" viewBox="0 0 220 230" aria-hidden="true" focusable="false">' +
-      '<path fill="' +
-      color +
-      '" d="M18 18h48l30 134H48L18 18z"/>' +
-      '<path fill="' +
-      color +
-      '" d="M154 18h48l-30 134h-48L154 18z"/>' +
-      '<path fill="#1E6BFF" d="M110.00,168.00L114.81,187.19L134.00,192.00L114.81,196.81L110.00,216.00L105.19,196.81L86.00,192.00L105.19,187.19Z"/>' +
+      '<svg class="' +
+      cls +
+      '" viewBox="' +
+      vb +
+      '" aria-hidden="true" focusable="false">' +
+      v +
+      star +
+      orio +
       "</svg>"
     );
   }
@@ -23,14 +38,15 @@
       '<a class="lockup" href="' +
       href +
       '" aria-label="Vorio">' +
-      markSvg(color) +
-      '<span class="lockup-type">ORIO</span>' +
+      lockupSvg(color, true) +
       "</a>"
     );
   }
 
   function heroMark() {
-    return '<div class="hero-mark" aria-hidden="true">' + markSvg("#0B1D36") + "</div>";
+    return (
+      '<div class="hero-mark" aria-hidden="true">' + lockupSvg("#0B1D36", false) + "</div>"
+    );
   }
 
   function renderHeader() {

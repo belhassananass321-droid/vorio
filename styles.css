@@ -113,32 +113,30 @@ p:last-child {
   text-underline-offset: 0.28em;
 }
 
-/* Lockup: open V (flat-ended bars) + ORIO beside it. Star sits under the valley. */
+/* Art lockup: open V + ORIO beside it. Star under the valley, not fused. */
 
 .lockup {
   display: inline-flex;
-  align-items: flex-start;
-  gap: 0.22em;
+  align-items: center;
   text-decoration: none;
   color: var(--navy);
+}
+
+.lockup-svg {
+  height: 2.85em;
+  width: auto;
+  display: block;
+  overflow: visible;
 }
 
 .lockup-mark {
   height: 2.55em;
   width: auto;
   flex: none;
+  overflow: visible;
 }
 
-.lockup-type {
-  font-weight: 800;
-  font-size: 1.42em;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  margin-top: 0.16em;
-}
-
-.site-footer .lockup,
-.site-footer .lockup-type {
+.site-footer .lockup {
   color: var(--cream);
 }
 
@@ -237,6 +235,10 @@ p:last-child {
 
 .hero-mark svg {
   width: 100%;
+  height: auto;
+}
+
+.hero-mark .lockup-mark {
   height: auto;
 }
 
