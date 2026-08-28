@@ -274,7 +274,9 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
 }
 .page-hero h1{max-width:16ch;margin:0 0 1.1rem}
 .page-hero .lede{max-width:42rem}
-.page-hero .pov{margin-top:.15rem}
+.page-hero .pov{margin-top:.15rem;max-width:42rem}
+.pov + .pov{margin-top:1rem}
+.motion-map{color:var(--muted);margin:-.4rem 0 2.2rem;max-width:40rem}
 .page-hero .actions{margin-top:1.6rem}
 .next-step{max-width:40rem}
 .next-step strong{display:block;margin:0 0 .35rem}
