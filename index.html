@@ -19,12 +19,13 @@
           <span>Vorio Advisory</span>
         </a>
         <button class="mobile-toggle" type="button" aria-label="Open menu"><span></span><span></span></button>
-        <nav class="navlinks" aria-label="Primary">
+        <nav class="navlinks" aria-label="Primary" id="site-nav">
           <a href="services.html">Services</a>
           <a href="govcon.html">GovCon</a>
           <a href="commercial.html">Commercial</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
+          <a class="nav-talk" href="contact.html">Talk to us</a>
         </nav>
         <a class="btn btn-nav" href="contact.html">Talk to us</a>
       </div>
@@ -99,7 +100,25 @@
             <p>Same motion. Both markets. We advise. Or we embed.</p>
           </div>
           <div class="lifecycle">
-            <img src="assets/lifecycle.svg" alt="Qualify, Position, Pursue, Win" />
+            <img class="lifecycle-svg" src="assets/lifecycle.svg" alt="Qualify, Position, Pursue, Win" />
+            <ol class="lifecycle-rail" aria-hidden="true">
+              <li>
+                <span class="lifecycle-node" aria-hidden="true"></span>
+                <span class="lifecycle-copy"><span class="num">01</span> <span class="label">QUALIFY</span></span>
+              </li>
+              <li>
+                <span class="lifecycle-node" aria-hidden="true"></span>
+                <span class="lifecycle-copy"><span class="num">02</span> <span class="label">POSITION</span></span>
+              </li>
+              <li>
+                <span class="lifecycle-node" aria-hidden="true"></span>
+                <span class="lifecycle-copy"><span class="num">03</span> <span class="label">PURSUE</span></span>
+              </li>
+              <li>
+                <span class="lifecycle-node" aria-hidden="true"></span>
+                <span class="lifecycle-copy"><span class="num">04</span> <span class="label">WIN</span></span>
+              </li>
+            </ol>
           </div>
         </div>
       </section>
