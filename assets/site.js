@@ -5,6 +5,7 @@ if(toggle&&links){
   toggle.setAttribute('aria-controls',links.id);
   const setOpen=open=>{
     links.classList.toggle('open',open);
+    document.body.classList.toggle('nav-open',open);
     toggle.setAttribute('aria-expanded',open?'true':'false');
     toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
   };

@@ -127,6 +127,14 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
 }
 .mobile-toggle span{
   display:block;width:16px;height:1.5px;background:var(--ink);
+  transition:transform .2s ease;
+  transform-origin:center;
+}
+.mobile-toggle[aria-expanded="true"] span:first-child{
+  transform:translateY(3.25px) rotate(45deg);
+}
+.mobile-toggle[aria-expanded="true"] span:last-child{
+  transform:translateY(-3.25px) rotate(-45deg);
 }
 
 /* Buttons */
@@ -416,18 +424,34 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
 
 @media (max-width:900px){
   :root{--nav-h:76px}
-  .nav-inner{min-height:var(--nav-h);flex-wrap:wrap}
+  .nav{
+    backdrop-filter:none;
+    background:#0B1D36;
+  }
+  .nav-inner{min-height:var(--nav-h);flex-wrap:nowrap}
   .navlinks{
     display:none;
-    flex:1 1 100%;
-    order:5;
+    position:fixed;
+    top:var(--nav-h);
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:25;
+    width:100%;
+    height:calc(100svh - var(--nav-h));
+    margin:0;
+    flex:none;
+    order:0;
     flex-direction:column;
     align-items:stretch;
     justify-content:flex-start;
-    padding:0 0 1rem;
+    padding:1.5rem var(--pad) 2rem;
     gap:0;
-    background:rgba(5,9,20,.97);
+    background:#0B1D36;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
   }
+  body.nav-open{overflow:hidden}
   .navlinks.open{display:flex}
   .navlinks a{
     min-height:44px;
@@ -450,7 +474,8 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
     opacity:1;
     width:fit-content;
   }
-  .mobile-toggle{display:flex}
+  .mobile-toggle{display:flex;margin-left:auto;z-index:26}
+  .btn-nav{margin-left:1.5rem}
   .hero-grid,.section-head,.split,.stack,.bands,.form-grid,.footer-grid,.footer-bar{
     grid-template-columns:1fr;
   }
@@ -517,7 +542,7 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
 
 @media (max-width:640px){
   body{font-size:16px}
-  .btn-nav{display:none}
+  .btn-nav{display:none;margin-left:0}
   .nav-inner{flex-wrap:wrap}
   .cards,.stack,.bands{grid-template-columns:1fr}
   .cycle-item{grid-template-columns:minmax(0,1fr);gap:.35rem}
