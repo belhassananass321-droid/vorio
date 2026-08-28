@@ -19,5 +19,5 @@
     <path d="M-536 -219L536 219"/>
     <path d="M536 -219L-536 219"/>
   </g>
-  <circle cx="1040" cy="390" r="4.5" fill="#1E6BFF" fill-opacity="0.85"/>
+  <circle cx="1040" cy="390" r="4.5" fill="#F4F2EC" fill-opacity="0.85"/>
 </svg>
