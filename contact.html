@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Contact — Vorio Advisory</title>
-    <meta name="description" content="Start a conversation with Vorio Advisory. hello@vorioadvisory.com" />
+    <meta name="description" content="Tell us what you need. Use the form." />
     <link rel="icon" href="assets/vorio-mark.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,14 +19,15 @@
           <span>Vorio Advisory</span>
         </a>
         <button class="mobile-toggle" type="button" aria-label="Open menu"><span></span><span></span></button>
-        <nav class="navlinks" aria-label="Primary">
+        <nav class="navlinks" aria-label="Primary" id="site-nav">
           <a href="services.html">Services</a>
           <a href="govcon.html">GovCon</a>
           <a href="commercial.html">Commercial</a>
           <a href="about.html">About</a>
           <a href="contact.html" aria-current="page">Contact</a>
+          <a class="nav-talk" href="contact.html">Talk to us</a>
         </nav>
-        <a class="btn btn-nav" href="contact.html">Start a conversation ↗</a>
+        <a class="btn btn-nav" href="contact.html">Talk to us</a>
       </div>
     </header>
 
@@ -34,14 +35,15 @@
       <section class="page-hero">
         <div class="wrap">
           <p class="kicker">Contact</p>
-          <h1>Start a conversation.</h1>
-          <p class="lede">Tell us where you are in the cycle. We’ll map the next move. Or write directly: <a href="mailto:hello@vorioadvisory.com">hello@vorioadvisory.com</a>.</p>
+          <h1>Talk to us</h1>
+          <p class="lede">Tell us what you need. Use the form.</p>
         </div>
       </section>
 
       <section class="section" style="padding-top:0">
         <div class="wrap">
-          <form id="contact-form" data-mail="hello@vorioadvisory.com" action="mailto:hello@vorioadvisory.com" method="post" enctype="text/plain">
+          <p class="next-step muted"><strong>What happens next</strong> You send this. We read it. We come back with a conversation. Not a forty-slide leave-behind.</p>
+          <form id="contact-form" method="post">
             <div class="form-grid">
               <label class="field">
                 <span>Name</span>
@@ -56,22 +58,32 @@
                 <input type="text" name="company" autocomplete="organization" />
               </label>
               <label class="field">
-                <span>Market</span>
-                <select name="market">
-                  <option value="GovCon">GovCon</option>
-                  <option value="Commercial">Commercial</option>
+                <span>What you need</span>
+                <select name="need" required>
+                  <option value="Commercial BD">Commercial BD</option>
+                  <option value="GovCon BD">GovCon BD</option>
                   <option value="Both">Both</option>
                 </select>
+                <span class="form-micro">This routes the conversation. It does not split the firm.</span>
               </label>
               <label class="field full">
-                <span>What you’re working on</span>
-                <textarea name="message" required></textarea>
+                <span>What you’re chasing (short)</span>
+                <textarea class="short" name="chase" required></textarea>
+              </label>
+              <label class="field">
+                <span>Phone (optional)</span>
+                <input type="tel" name="phone" autocomplete="tel" />
               </label>
               <div class="form-actions full">
-                <button class="btn btn-primary" type="submit">Send ↗</button>
+                <button class="btn btn-primary" type="submit">Send it</button>
+                <p class="form-status" hidden>Received. We will come back with a conversation.</p>
               </div>
             </div>
           </form>
+          <aside class="direct">
+            <p class="kicker">Direct</p>
+            <address>9211 Forest Hill Avenue<br />Suite 200<br />Richmond, 23235</address>
+          </aside>
         </div>
       </section>
     </main>
@@ -79,13 +91,16 @@
     <footer class="footer">
       <div class="wrap">
         <div class="footer-cta">
-          <h2>Growth gets easier when<br />the whole company knows<br /><span class="accent">where north is.</span></h2>
-          <a class="btn btn-primary" href="contact.html">Set the direction ↗</a>
+          <div class="footer-cta-copy">
+            <h2>You want more work. So do we.</h2>
+            <p class="lockup">The more you grow, we grow.</p>
+          </div>
+          <a class="btn btn-primary" href="contact.html">Talk to us</a>
         </div>
         <div class="footer-grid">
           <div class="footer-brand">
             <img class="footer-mark" src="assets/vorio-mark.svg" alt="Vorio" />
-            <p>Business development and business-unit support built around one idea: know where you're going, then align the whole company to get there.</p>
+            <p>Business development. Commercial and government.</p>
           </div>
           <div class="footer-col">
             <p class="footer-label">Navigate</p>
@@ -93,17 +108,18 @@
             <a href="govcon.html">GovCon</a>
             <a href="commercial.html">Commercial</a>
             <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
           </div>
           <div class="footer-col">
             <p class="footer-label">Connect</p>
-            <a href="contact.html">Start a conversation</a>
-            <a href="mailto:hello@vorioadvisory.com">hello@vorioadvisory.com</a>
+            <a href="contact.html">Talk to us</a>
+            <p class="footer-address">9211 Forest Hill Avenue, Suite 200, Richmond, 23235</p>
             <a href="privacy.html">Privacy</a>
           </div>
         </div>
         <div class="footer-bar">
           <p>© <span data-year>2026</span> Vorio Advisory LLC. All rights reserved.</p>
-          <p>Direction before motion.</p>
+          <p>Direction is the north star. The more you grow, we grow.</p>
         </div>
       </div>
     </footer>
