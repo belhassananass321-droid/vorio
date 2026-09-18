@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" role="img" aria-labelledby="stage-home-title">
+  <title id="stage-home-title">Qualify, Position, Win</title>
+  <rect x="40" y="30" width="360" height="160" rx="14" fill="none" stroke="#F4F2EC" stroke-width="2"/>
+  <text x="64" y="72" font-family="Montserrat, Inter, Arial, sans-serif" font-size="18" fill="#A7B0C2">01</text>
+  <text x="64" y="112" font-family="Montserrat, Inter, Arial, sans-serif" font-size="30" font-weight="800" fill="#F4F2EC">Qualify</text>
+  <rect x="428" y="30" width="360" height="160" rx="14" fill="none" stroke="#F4F2EC" stroke-width="2"/>
+  <text x="452" y="72" font-family="Montserrat, Inter, Arial, sans-serif" font-size="18" fill="#A7B0C2">02</text>
+  <text x="452" y="112" font-family="Montserrat, Inter, Arial, sans-serif" font-size="30" font-weight="800" fill="#F4F2EC">Position</text>
+  <path d="M608 180.4 L610.64 189.76 L620 192.4 L610.64 195.04 L608 204.4 L605.36 195.04 L596 192.4 L605.36 189.76 Z" fill="#1E6BFF"/>
+  <rect x="816" y="30" width="360" height="160" rx="14" fill="none" stroke="#F4F2EC" stroke-width="2"/>
+  <text x="840" y="72" font-family="Montserrat, Inter, Arial, sans-serif" font-size="18" fill="#A7B0C2">03</text>
+  <text x="840" y="112" font-family="Montserrat, Inter, Arial, sans-serif" font-size="30" font-weight="800" fill="#F4F2EC">Win</text>
+</svg>
