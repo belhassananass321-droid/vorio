@@ -331,26 +331,69 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
 }
 .band p{color:var(--muted);font-size:.98rem}
 
-/* Four-stage lifecycle — Qualify → Position → Pursue → Win.
-   Art stage-notch figures are unwired until a four-stage redelivery. */
-.lifecycle{padding-top:.4rem;overflow:hidden}
-.lifecycle-svg{width:100%;height:auto;margin:1.2rem 0 0;background:transparent}
-.lifecycle-rail{
+/* Four-stage Stage notch — Qualify → Position → Pursue → Win.
+   Cream-outline blocks on Ink; #1E6BFF star only on the active stage. */
+.stage-figure{
+  margin:0;
+  padding-top:.5rem;
+  min-width:0;
+  overflow:visible;
+}
+.stage-svg{
+  width:100%;
+  height:auto;
+  margin:0;
+  background:transparent;
+}
+.stage-rail{
   display:none;
   list-style:none;
-  margin:1.2rem 0 0;
+  margin:0;
   padding:0;
 }
+.stage-card{
+  display:block;
+  position:relative;
+  border:2px solid var(--ink);
+  border-radius:12px;
+  padding:1.25rem 1.15rem 1.75rem;
+  min-height:7.2rem;
+}
+.stage-card .num{
+  display:block;
+  color:var(--muted);
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.16em;
+  margin:0 0 .5rem;
+}
+.stage-card .label{
+  display:block;
+  color:var(--ink);
+  font-size:1.3rem;
+  font-weight:800;
+  letter-spacing:-.03em;
+}
+.stage-star{
+  position:absolute;
+  left:50%;
+  bottom:8px;
+  width:14px;
+  height:14px;
+  transform:translateX(-50%);
+  color:var(--star);
+}
+.stage-star svg{width:100%;height:100%}
 
 .services-motion{
   display:grid;
-  grid-template-columns:1fr;
-  gap:clamp(2.8rem,6vw,4.5rem);
-  align-items:stretch;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);
+  gap:clamp(2rem,4.5vw,3.6rem);
+  align-items:center;
 }
-.services-motion > *,
-.lifecycle{min-width:0}
-.services-motion .lifecycle{padding-top:0}
+.services-motion > *{min-width:0}
+.services-motion .stage-figure{padding-top:0}
+.services-motion .stage-svg{max-width:880px}
 
 .cycle-list{display:grid;gap:0;margin-top:0}
 .cycle-item{
@@ -512,6 +555,11 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
 @media (max-width:1024px){
   .navlinks{gap:1.15rem}
   .hero-grid{min-height:0}
+  .services-motion{
+    grid-template-columns:1fr;
+    gap:2.4rem;
+    align-items:stretch;
+  }
 }
 
 @media (max-width:900px){
@@ -588,49 +636,11 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
   .band{border-left:0;border-top:1px solid var(--line)}
   .band:first-child{border-top:0}
   .cycle-item{grid-template-columns:7.2rem minmax(0,1fr)}
-  .lifecycle-svg{display:none}
-  .lifecycle-rail{
-    display:flex;
-    flex-direction:column;
-    gap:0;
-    position:relative;
-    padding-left:0;
-  }
-  .lifecycle-rail::before{
-    content:"";
-    position:absolute;
-    left:17px;top:18px;bottom:18px;
-    width:1.5px;
-    background:rgba(244,242,236,.22);
-  }
-  .lifecycle-rail li{
+  .stage-svg{display:none}
+  .stage-rail{
     display:grid;
-    grid-template-columns:36px minmax(0,1fr);
-    align-items:center;
-    gap:.9rem 1rem;
-    padding:.85rem 0;
-    position:relative;
-    z-index:1;
-  }
-  .lifecycle-node{
-    width:36px;height:36px;
-    border:1.6px solid var(--ink);
-    border-radius:50%;
-    background:var(--bg);
-    box-shadow:inset 0 0 0 11px var(--bg),inset 0 0 0 16px var(--ink);
-  }
-  .lifecycle-copy{display:flex;flex-direction:column;gap:.15rem;min-width:0}
-  .lifecycle-copy .num{
-    color:var(--muted);
-    font-size:.72rem;
-    font-weight:600;
-    letter-spacing:.16em;
-  }
-  .lifecycle-copy .label{
-    color:var(--ink);
-    font-size:.95rem;
-    font-weight:700;
-    letter-spacing:.16em;
+    grid-template-columns:1fr;
+    gap:.75rem;
   }
   .footer-col a{
     min-height:44px;
@@ -658,6 +668,7 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
   .hero-art img{width:min(280px,100%)}
   .form-grid{grid-template-columns:1fr}
   .field input,.field select{font-size:16px}
+  .stage-card{min-height:6.4rem;padding:1.1rem 1.05rem 1.6rem}
 }
 
 @media (max-width:390px){
