@@ -3,11 +3,11 @@
   <title id="lifecycleTitle">Qualify, Position, Pursue, Win</title>
   <defs>
     <style>
-      .rail { fill: none; stroke: rgba(244,242,236,.18); stroke-width: 1.5; }
-      .node { fill: #0B1D36; stroke: #F4F2EC; stroke-width: 1.6; }
-      .dot { fill: #F4F2EC; }
-      .label { fill: #F4F2EC; font-family: Inter, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 2.4px; }
-      .num { fill: #F4F2EC; font-family: Inter, Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 1.6px; }
+      .rail { fill: none; stroke: rgba(11,29,54,.18); stroke-width: 1.5; }
+      .node { fill: #F4F2EC; stroke: #0B1D36; stroke-width: 1.6; }
+      .dot { fill: #0B1D36; }
+      .label { fill: #0B1D36; font-family: Inter, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 2.4px; }
+      .num { fill: #0B1D36; font-family: Inter, Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 1.6px; }
     </style>
   </defs>
   <line class="rail" x1="90" y1="86" x2="1090" y2="86"/>
