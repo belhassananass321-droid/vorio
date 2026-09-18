@@ -384,10 +384,12 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
 
 .services-motion{
   display:grid;
-  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
-  gap:clamp(2.4rem,5vw,4.2rem);
-  align-items:center;
+  grid-template-columns:1fr;
+  gap:clamp(2.8rem,6vw,4.5rem);
+  align-items:stretch;
 }
+.services-motion > *,
+.stage-figure{min-width:0}
 .services-motion .stage-figure{padding-top:0}
 
 .cycle-list{display:grid;gap:0;margin-top:0}
@@ -410,7 +412,7 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
 .cycle-item h3{margin:0 0 .35rem}
 .cycle-item p{color:var(--muted);font-size:1.02rem;line-height:1.6}
 
-.who .who-inner{
+.who-inner{
   max-width:36rem;
   padding:clamp(1rem,3vw,2rem) 0;
 }
@@ -441,7 +443,7 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
   max-width:40rem;
 }
 .field{display:flex;flex-direction:column;gap:.4rem;min-width:0}
-.field.full{grid-column:1/-1}
+.field.full,.form-actions.full{grid-column:1/-1}
 .field span{font-size:.86rem;color:var(--muted)}
 .field input,.field select,.field textarea{
   width:100%;
@@ -550,7 +552,6 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
 @media (max-width:1024px){
   .navlinks{gap:1.15rem}
   .hero-grid{min-height:0}
-  .services-motion{grid-template-columns:1fr;gap:2.4rem}
 }
 
 @media (max-width:900px){
@@ -614,7 +615,7 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
   }
   .mobile-toggle{display:flex;margin-left:auto;z-index:26}
   .btn-nav{margin-left:1.5rem}
-  .hero-grid,.section-head,.split,.stack,.bands,.form-grid,.footer-grid,.footer-bar,.services-motion{
+  .hero-grid,.section-head,.split,.stack,.bands,.form-grid,.footer-grid,.footer-bar{
     grid-template-columns:1fr;
   }
   .cards{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
