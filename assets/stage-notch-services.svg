@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="922" height="160" viewBox="0 0 922 160" role="img" aria-labelledby="stage-services-title">
+  <title id="stage-services-title">Qualify, Position, Pursue, Win</title>
+  <rect x="40" y="28" width="200" height="110" rx="12" fill="none" stroke="#F4F2EC" stroke-width="2"/>
+  <text x="54" y="54" font-family="Montserrat, Inter, Arial, sans-serif" font-size="12" fill="#A7B0C2">01</text>
+  <text x="54" y="78" font-family="Montserrat, Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#F4F2EC">Qualify</text>
+  <rect x="254" y="28" width="200" height="110" rx="12" fill="none" stroke="#F4F2EC" stroke-width="2"/>
+  <text x="268" y="54" font-family="Montserrat, Inter, Arial, sans-serif" font-size="12" fill="#A7B0C2">02</text>
+  <text x="268" y="78" font-family="Montserrat, Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#F4F2EC">Position</text>
+  <rect x="468" y="28" width="200" height="110" rx="12" fill="none" stroke="#F4F2EC" stroke-width="2"/>
+  <text x="482" y="54" font-family="Montserrat, Inter, Arial, sans-serif" font-size="12" fill="#A7B0C2">03</text>
+  <text x="482" y="78" font-family="Montserrat, Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#F4F2EC">Pursue</text>
+  <rect x="682" y="28" width="200" height="110" rx="12" fill="none" stroke="#F4F2EC" stroke-width="2"/>
+  <text x="696" y="54" font-family="Montserrat, Inter, Arial, sans-serif" font-size="12" fill="#A7B0C2">04</text>
+  <text x="696" y="78" font-family="Montserrat, Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#F4F2EC">Win</text>
+  <path d="M782 131.6 L783.76 137.84 L790 139.6 L783.76 141.36 L782 147.6 L780.24 141.36 L774 139.6 L780.24 137.84 Z" fill="#1E6BFF"/>
+</svg>
