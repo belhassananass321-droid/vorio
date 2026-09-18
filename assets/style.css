@@ -112,7 +112,7 @@ h3{font-size:1.22rem;letter-spacing:-.03em;line-height:1.2}
 .navlinks a:hover,
 .navlinks a:focus-visible{opacity:1}
 .navlinks a[aria-current="page"]{opacity:1;box-shadow:inset 0 -2px 0 var(--ink);color:var(--ink)}
-.nav-talk{display:none}
+.navlinks a.nav-talk,.nav-talk{display:none}
 .mobile-toggle{
   display:none;
   width:44px;height:44px;
