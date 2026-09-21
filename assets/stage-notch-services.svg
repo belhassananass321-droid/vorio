@@ -12,5 +12,5 @@
   <rect x="682" y="28" width="200" height="110" rx="12" fill="none" stroke="#F4F2EC" stroke-width="2"/>
   <text x="696" y="54" font-family="Montserrat, Inter, Arial, sans-serif" font-size="12" fill="#A7B0C2">04</text>
   <text x="696" y="78" font-family="Montserrat, Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#F4F2EC">Win</text>
-  <path d="M782 131.6 L783.76 137.84 L790 139.6 L783.76 141.36 L782 147.6 L780.24 141.36 L774 139.6 L780.24 137.84 Z" fill="#1E6BFF"/>
+  <path d="M782 131.6 L783.76 137.84 L790 139.6 L783.76 141.36 L782 147.6 L780.24 141.36 L774 139.6 L780.24 137.84 Z" fill="#F4F2EC"/>
 </svg>
