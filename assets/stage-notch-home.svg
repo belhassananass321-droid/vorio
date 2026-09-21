@@ -9,7 +9,7 @@
   <rect x="636" y="28" width="280" height="150" rx="12" fill="none" stroke="#F4F2EC" stroke-width="2"/>
   <text x="656" y="64" font-family="Montserrat, Inter, Arial, sans-serif" font-size="16" fill="#A7B0C2">03</text>
   <text x="656" y="96" font-family="Montserrat, Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#F4F2EC">Pursue</text>
-  <path d="M776 169.2 L778.42 177.78 L787 180.2 L778.42 182.62 L776 191.2 L773.58 182.62 L765 180.2 L773.58 177.78 Z" fill="#1E6BFF"/>
+  <path d="M776 169.2 L778.42 177.78 L787 180.2 L778.42 182.62 L776 191.2 L773.58 182.62 L765 180.2 L773.58 177.78 Z" fill="#F4F2EC"/>
   <rect x="934" y="28" width="280" height="150" rx="12" fill="none" stroke="#F4F2EC" stroke-width="2"/>
   <text x="954" y="64" font-family="Montserrat, Inter, Arial, sans-serif" font-size="16" fill="#A7B0C2">04</text>
   <text x="954" y="96" font-family="Montserrat, Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#F4F2EC">Win</text>
