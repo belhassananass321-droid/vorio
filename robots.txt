@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Allow: /platform
-
 Sitemap: https://vorioadvisory.com/sitemap.xml

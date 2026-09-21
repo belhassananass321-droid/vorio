@@ -4,10 +4,13 @@
     <loc>https://vorioadvisory.com/</loc>
   </url>
   <url>
-    <loc>https://vorioadvisory.com/platform</loc>
+    <loc>https://vorioadvisory.com/services</loc>
   </url>
   <url>
-    <loc>https://vorioadvisory.com/services</loc>
+    <loc>https://vorioadvisory.com/govcon</loc>
+  </url>
+  <url>
+    <loc>https://vorioadvisory.com/commercial</loc>
   </url>
   <url>
     <loc>https://vorioadvisory.com/about</loc>
@@ -17,11 +20,5 @@
   </url>
   <url>
     <loc>https://vorioadvisory.com/privacy</loc>
-  </url>
-  <url>
-    <loc>https://vorioadvisory.com/govcon</loc>
-  </url>
-  <url>
-    <loc>https://vorioadvisory.com/commercial</loc>
   </url>
 </urlset>
